@@ -1,0 +1,371 @@
+/* Color scheme variables */
+:root {
+  --navy: #0a192f;
+  --navy-light: #172a45;
+  --blue: #3a506b;
+  --blue-light: #4a6b8c;
+  --accent: #9cc6e9;
+  --accent-light: #c7ddee;
+  --topo-bg: #112240; /* New distinctive background for topo band */
+  --text-light: #e6f1ff;
+  --text-secondary: rgba(230, 241, 255, 0.5); /* New color for paragraph text - slightly transparent */
+  --text-dark: #020c1b;
+  --white: var(--text-light); /* Define white variable using text-light */
+}
+
+/* Global styles */
+body {
+  background-color: var(--navy);
+  color: var(--text-light);
+  font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Animation for topo waves */
+@keyframes moveWave {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Navigation bar */
+.topnav {
+  background-color: var(--navy-light);
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 20px; /* Added left padding */
+  position: relative;
+  z-index: 10;
+}
+
+.topnav a {
+  color: var(--text-light);
+  text-align: center;
+  padding: 12px 20px;
+  text-decoration: none;
+  font-size: 17px;
+  margin: 0 5px;
+  border-radius: 5px;
+  background-color: var(--blue);
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border: 2px solid transparent;
+}
+
+.topnav a:hover {
+  background-color: var(--blue-light);
+  color: var(--text-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none; /* Added this line to prevent underline */
+}
+
+.topnav a.active {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  font-weight: bold;
+  border: 2px solid var(--accent-light);
+}
+
+.topnav a.active:hover {
+  background-color: var(--accent-light);
+  color: var(--text-dark);
+}
+
+.topnav a:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Topographic wave band with balanced two-color gradient */
+.topo-band {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: linear-gradient(90deg, 
+    var(--topo-bg) 0%, 
+    var(--blue-light) 100%); /* Simplified to two colors with more contrast */
+  margin-bottom: 0;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.topo-wave {
+  position: absolute;
+  width: 200%;
+  height: 100%;
+  background: none;
+  left: -50%;
+}
+
+/* Modified paths to remove straight lines at bottom */
+.topo-wave path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.2px;
+  stroke-opacity: 0.6;
+  animation: moveWave 20s linear infinite;
+}
+
+.topo-wave:nth-child(2) path {
+  stroke: var(--accent-light);
+  animation-duration: 15s;
+  animation-delay: -5s;
+}
+
+.topo-wave:nth-child(3) path {
+  stroke: var(--blue-light);
+  animation-duration: 25s;
+  animation-delay: -2s;
+}
+
+.topo-wave:nth-child(4) path {
+  stroke: var(--blue);
+  animation-duration: 18s;
+  animation-delay: -10s;
+}
+
+.topo-wave:nth-child(5) path {
+  stroke: var(--accent-light);
+  stroke-opacity: 0.3;
+  animation-duration: 22s;
+  animation-delay: -7s;
+}
+
+.topo-wave:nth-child(6) path {
+  stroke: var(--accent);
+  stroke-opacity: 0.2;
+  animation-duration: 19s;
+  animation-delay: -3s;
+}
+
+.topo-wave:nth-child(7) path {
+  stroke: var(--blue-light);
+  stroke-opacity: 0.4;
+  animation-duration: 24s;
+  animation-delay: -9s;
+}
+
+.topo-wave:nth-child(8) path {
+  stroke: var(--blue);
+  stroke-opacity: 0.5;
+  animation-duration: 21s;
+  animation-delay: -15s;
+}
+
+/* Thin divider between sections - thicker and solid colored */
+.divider {
+  height: 3px; /* Increased from 1px to 3px - thicker but not too thick */
+  background-color: var(--accent); /* Solid color using the accent color */
+  margin: 0;
+  position: relative;
+  z-index: 6;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  opacity: 0.7; /* Slightly transparent to blend better with the design */
+}
+
+/* Content containers */
+.container {
+  max-width: 900px; /* Increased from 800px to 900px */
+  width: 100%;
+  background-color: var(--navy-light);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
+}
+
+/* Container wrapper for centering both containers */
+.container-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  max-width: 1300px; /* Increased from 1200px to 1300px to accommodate wider container */
+  margin: 0 auto;
+}
+
+/* Headshot container */
+.headshot-container {
+  width: 380px;
+  background-color: var(--navy-light);
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 5;
+  align-self: flex-start;
+  margin-top: 0; /* Removed top margin to align with name container */
+}
+
+/* Headshot container image */
+.headshot-container img {
+  width: 100%;
+  height: auto;
+  border: 2px solid var(--accent);
+  max-height: none; /* Remove any height restrictions */
+}
+
+/* Headings */
+h1, h2, h3 {
+  color: var(--white);
+}
+
+/* Name with dotted grid background - reverted to white text */
+.name-grid {
+  position: relative;
+  display: inline-block;
+  padding: 0 5% 20px 5%; /* Changed fixed padding to percentage-based */
+  margin-bottom: 25px;
+  width: 90%; /* Add width to control size relative to container */
+  max-width: 600px; /* Add max-width to prevent it from getting too large */
+}
+
+.name-grid h1 {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  font-size: clamp(1.8rem, 5vw, 2.8rem); /* Responsive font size */
+  color: var(--white); /* Reverted to white */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  background-color: transparent; /* Removed background */
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-block;
+}
+
+.name-grid::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 5px;
+  right: 5px; /* Changed from fixed -230px to relative 5px */
+  bottom: 8px;
+  background-image: 
+    radial-gradient(circle, var(--blue-light) 1px, transparent 1px);
+  background-size: 15px 15px;
+  background-position: 0 0;
+  z-index: 1;
+  opacity: 0.5;
+  border-radius: 4px;
+}
+
+/* Links */
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-light);
+  text-decoration: underline;
+}
+
+/* Button container for multiple buttons */
+.button-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--accent);
+  color: var(--text-dark);
+  padding: 12px 18px; /* Slightly larger */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-decoration: none; /* Prevent underline on hover */
+}
+
+.btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--blue-light);
+}
+
+/* Add to your media query for responsiveness */
+@media (max-width: 768px) {
+  /* Make container-wrapper column direction on small screens */
+  .container-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* Adjust container margins for small screens */
+  .container {
+    margin: 0 0 20px 0;
+    width: 90%;
+    padding: 20px;
+  }
+  
+  /* Adjust headshot container for small screens */
+  .headshot-container {
+    width: 90%;
+    max-width: 320px;
+    margin-bottom: 20px;
+  }
+  
+  /* Adjust name grid on small screens */
+  .name-grid {
+    padding: 0 15px 15px 15px;
+  }
+  
+  /* Make buttons stack on very small screens */
+  @media (max-width: 480px) {
+    .button-container {
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+/* Add styling specifically for paragraphs */
+p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* Add styling for list items to match paragraph transparency */
+li {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
