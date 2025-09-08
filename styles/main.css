@@ -6,24 +6,22 @@
   --blue-light: #4a6b8c;
   --accent: #9cc6e9;
   --accent-light: #c7ddee;
-  --topo-bg: #112240; /* New distinctive background for topo band */
+  --topo-bg: #112240;
   --text-light: #e6f1ff;
-  --text-secondary: rgba(230, 241, 255, 0.5); /* New color for paragraph text - slightly transparent */
+  --text-secondary: rgba(230, 241, 255, 0.5);
   --text-dark: #020c1b;
-  --white: var(--text-light); /* Define white variable using text-light */
+  --white: var(--text-light);
 }
 
-/* Global styles */
 body {
   background-color: var(--navy);
   color: var(--text-light);
   font-family: 'Open Sans', 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
-/* Animation for topo waves */
 @keyframes moveWave {
   0% {
     transform: translateY(0);
@@ -36,14 +34,13 @@ body {
   }
 }
 
-/* Navigation bar */
 .topnav {
   background-color: var(--navy-light);
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   justify-content: flex-start;
-  padding: 10px 20px; /* Added left padding */
+  padding: 10px 20px;
   position: relative;
   z-index: 10;
 }
@@ -68,7 +65,7 @@ body {
   color: var(--text-light);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-decoration: none; /* Added this line to prevent underline */
+  text-decoration: none;
 }
 
 .topnav a.active {
@@ -88,7 +85,6 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Topographic wave band with balanced two-color gradient */
 .topo-band {
   position: relative;
   width: 100%;
@@ -96,7 +92,7 @@ body {
   overflow: hidden;
   background: linear-gradient(90deg, 
     var(--topo-bg) 0%, 
-    var(--blue-light) 100%); /* Simplified to two colors with more contrast */
+    var(--blue-light) 100%);
   margin-bottom: 0;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
@@ -109,7 +105,6 @@ body {
   left: -50%;
 }
 
-/* Modified paths to remove straight lines at bottom */
 .topo-wave path {
   fill: none;
   stroke: var(--accent);
@@ -164,20 +159,18 @@ body {
   animation-delay: -15s;
 }
 
-/* Thin divider between sections - thicker and solid colored */
 .divider {
-  height: 3px; /* Increased from 1px to 3px - thicker but not too thick */
-  background-color: var(--accent); /* Solid color using the accent color */
+  height: 3px;
+  background-color: var(--accent);
   margin: 0;
   position: relative;
   z-index: 6;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  opacity: 0.7; /* Slightly transparent to blend better with the design */
+  opacity: 0.7;
 }
 
-/* Content containers */
 .container {
-  max-width: 900px; /* Increased from 800px to 900px */
+  max-width: 900px;
   width: 100%;
   background-color: var(--navy-light);
   padding: 30px;
@@ -186,16 +179,14 @@ body {
   margin-right: 20px;
 }
 
-/* Container wrapper for centering both containers */
 .container-wrapper {
   display: flex;
   justify-content: center;
   padding: 20px;
-  max-width: 1300px; /* Increased from 1200px to 1300px to accommodate wider container */
+  max-width: 1300px;
   margin: 0 auto;
 }
 
-/* Headshot container */
 .headshot-container {
   width: 380px;
   background-color: var(--navy-light);
@@ -207,41 +198,38 @@ body {
   align-items: flex-start;
   z-index: 5;
   align-self: flex-start;
-  margin-top: 0; /* Removed top margin to align with name container */
+  margin-top: 0;
 }
 
-/* Headshot container image */
 .headshot-container img {
   width: 100%;
   height: auto;
   border: 2px solid var(--accent);
-  max-height: none; /* Remove any height restrictions */
+  max-height: none;
 }
 
-/* Headings */
 h1, h2, h3 {
   color: var(--white);
 }
 
-/* Name with dotted grid background - reverted to white text */
 .name-grid {
   position: relative;
   display: inline-block;
-  padding: 0 5% 20px 5%; /* Changed fixed padding to percentage-based */
+  padding: 0 5% 20px 5%;
   margin-bottom: 25px;
-  width: 90%; /* Add width to control size relative to container */
-  max-width: 600px; /* Add max-width to prevent it from getting too large */
+  width: 90%;
+  max-width: 600px;
 }
 
 .name-grid h1 {
   position: relative;
   z-index: 2;
   margin: 0;
-  font-size: clamp(1.8rem, 5vw, 2.8rem); /* Responsive font size */
-  color: var(--white); /* Reverted to white */
+  font-size: clamp(1.8rem, 5vw, 2.8rem);
+  color: var(--white);
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   font-weight: 700;
-  background-color: transparent; /* Removed background */
+  background-color: transparent;
   padding: 0;
   border-radius: 0;
   box-shadow: none;
@@ -253,7 +241,7 @@ h1, h2, h3 {
   position: absolute;
   top: -8px;
   left: 5px;
-  right: 5px; /* Changed from fixed -230px to relative 5px */
+  right: 5px;
   bottom: 8px;
   background-image: 
     radial-gradient(circle, var(--blue-light) 1px, transparent 1px);
@@ -264,7 +252,6 @@ h1, h2, h3 {
   border-radius: 4px;
 }
 
-/* Links */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -275,18 +262,16 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Button container for multiple buttons */
 .button-container {
   display: flex;
   gap: 15px;
   margin-top: 25px;
 }
 
-/* Buttons */
 .btn {
   background-color: var(--accent);
   color: var(--text-dark);
-  padding: 12px 18px; /* Slightly larger */
+  padding: 12px 18px;
   border: none;
   border-radius: 6px;
   cursor: pointer;
@@ -300,7 +285,7 @@ a:hover {
   background-color: var(--accent-light);
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  text-decoration: none; /* Prevent underline on hover */
+  text-decoration: none;
 }
 
 .btn:active {
@@ -317,34 +302,28 @@ a:hover {
   background-color: var(--blue-light);
 }
 
-/* Add to your media query for responsiveness */
 @media (max-width: 768px) {
-  /* Make container-wrapper column direction on small screens */
   .container-wrapper {
     flex-direction: column;
     align-items: center;
   }
   
-  /* Adjust container margins for small screens */
   .container {
     margin: 0 0 20px 0;
     width: 90%;
     padding: 20px;
   }
   
-  /* Adjust headshot container for small screens */
   .headshot-container {
     width: 90%;
     max-width: 320px;
     margin-bottom: 20px;
   }
-  
-  /* Adjust name grid on small screens */
+
   .name-grid {
     padding: 0 15px 15px 15px;
   }
   
-  /* Make buttons stack on very small screens */
   @media (max-width: 480px) {
     .button-container {
       flex-direction: column;
@@ -358,13 +337,11 @@ a:hover {
   }
 }
 
-/* Add styling specifically for paragraphs */
 p {
   color: var(--text-secondary);
   line-height: 1.6;
 }
 
-/* Add styling for list items to match paragraph transparency */
 li {
   color: var(--text-secondary);
   line-height: 1.6;
