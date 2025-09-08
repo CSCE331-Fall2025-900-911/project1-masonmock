@@ -13,6 +13,7 @@
   --white: var(--text-light);
 }
 
+/* Body formatting */
 body {
   background-color: var(--navy);
   color: var(--text-light);
