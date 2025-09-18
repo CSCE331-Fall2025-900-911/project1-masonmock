@@ -1,16 +1,25 @@
 <!DOCTYPE HTML>
 <head>
   <title>Mason Mock - Qualifications</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <link id="main-style" rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/png" href="styles/favicon.png">
 </head>
 
 <body>
   <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="service.html">Service</a>
-    <a class="active" href="qualifications.html">Qualifications</a>
-    <a href="genai.html">AI Generated</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="service.html">Service</a>
+      <a class="active" href="qualifications.html">Qualifications</a>
+      <a href="genai.html">AI Generated</a>
+    </div>
+    <div class="theme-switch-container">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-switch">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
 
   <div class="topo-band">
@@ -63,6 +72,20 @@
         </ul>
       </div>
     </div>
+    
+    <!-- Update the resume section to show a cleaner PDF view -->
+    <div class="resume-container">
+      <h2 class="resume-title">My Resume</h2>
+      <div class="resume-controls">
+        <a href="styles/Mock_Mason_Resume.pdf" download class="btn btn-primary">Download PDF</a>
+        <a href="styles/Mock_Mason_Resume.pdf" target="_blank" class="btn btn-primary">Open in New Tab</a>
+      </div>
+      <div class="resume-frame-container">
+        <iframe class="resume-frame" src="styles/Mock_Mason_Resume.pdf#toolbar=0&navpanes=0&scrollbar=0&statusbar=0" frameborder="0"></iframe>
+      </div>
+    </div>
   </div>
+
+  <script src="scripts/style-toggle.js"></script>
 </body>
 </html>

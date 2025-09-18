@@ -40,10 +40,19 @@ body {
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
-  justify-content: flex-start;
-  padding: 10px 20px;
+  align-items: center;
+  justify-content: space-between; /* This separates the nav links and theme switch */
+  padding: 0 20px;
   position: relative;
   z-index: 10;
+  height: 60px;
+}
+
+/* Left-aligned navigation links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
 }
 
 .topnav a {
@@ -73,7 +82,6 @@ body {
   background-color: var(--accent);
   color: var(--text-dark);
   font-weight: bold;
-  border: 2px solid var(--accent-light);
 }
 
 .topnav a.active:hover {
@@ -84,6 +92,101 @@ body {
 .topnav a:active {
   transform: translateY(1px);
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme switch container in the topnav */
+.theme-switch-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  margin-left: auto;
+  padding-right: 20px;
+}
+
+/* Slider toggle styles */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 28px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--blue);
+  transition: .4s;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: var(--accent);
+  transition: .4s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+input:checked + .slider {
+  background-color: var(--accent);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  background-color: var(--blue);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* You can remove the theme-toggle-btn styles if you want, or keep them for future use */
+.theme-toggle-btn {
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: var(--blue);
+  color: var(--text-light);
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  height: 36px;
+}
+
+.theme-toggle-btn:hover {
+  background-color: var(--blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-toggle-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
 .topo-band {
@@ -301,6 +404,139 @@ a:hover {
 
 .btn-primary:hover {
   background-color: var(--blue-light);
+}
+
+/* Theme Toggle Button */
+.theme-btn {
+  background-color: var(--blue);
+  color: var(--text-light);
+  padding: 8px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* Push to right */
+  display: inline-block;
+  position: relative;
+  z-index: 20; /* Ensure it's above other elements */
+  font-family: inherit;
+  font-size: 14px;
+  min-width: 100px; /* Ensure it has width */
+  min-height: 34px; /* Ensure it has height */
+}
+
+.theme-btn:hover {
+  background-color: var(--blue-light);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.theme-btn:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Updated resume styling to match qualification container */
+
+.resume-container {
+  width: 100%;
+  margin: 0 0 40px 0; /* Changed from "margin: 40px 0" to remove top margin */
+  background-color: var(--navy-light);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.resume-title {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 30px 0;
+  font-size: clamp(1.8rem, 5vw, 2.4rem);
+  color: var(--white);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  font-weight: 700;
+  background-color: transparent;
+  padding: 0 5%;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-block;
+  /* Remove the after pseudo-element that creates the underline */
+}
+
+/* Add the dot mesh background */
+.resume-title::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 5px;
+  right: 5px;
+  bottom: 8px;
+  background-image: 
+    radial-gradient(circle, var(--blue-light) 1px, transparent 1px);
+  background-size: 15px 15px;
+  background-position: 0 0;
+  z-index: -1;
+  opacity: 0.5;
+  border-radius: 4px;
+}
+
+.resume-controls {
+  display: flex;
+  justify-content: flex-start; /* Align to the left like other buttons */
+  gap: 15px;
+  margin: 25px 0 35px 0;
+  position: relative;
+  z-index: 2;
+}
+
+.resume-frame-container {
+  width: 100%;
+  height: 800px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: white;
+  margin: 0 auto;
+  position: relative;
+  border: 2px solid var(--accent);
+  z-index: 2;
+}
+
+.resume-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .topnav {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .nav-links {
+    order: 2;
+    width: 100%;
+    justify-content: flex-start;
+    padding-left: 0;
+    overflow-x: auto;
+  }
+  
+  .theme-switch-container {
+    order: 1;
+    width: 100%;
+    justify-content: flex-end;
+    padding-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .topnav a {
+    margin: 5px 3px;
+    padding: 8px 12px;
+    font-size: 15px;
+  }
 }
 
 @media (max-width: 768px) {

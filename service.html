@@ -1,16 +1,25 @@
 <!DOCTYPE HTML>
 <head>
   <title>Mason Mock - Service</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <link id="main-style" rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/png" href="styles/favicon.png">
 </head>
 
 <body>
   <div class="topnav">
-    <a href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a class="active" href="service.html">Service</a>
-    <a href="qualifications.html">Qualifications</a>
-    <a href="genai.html">AI Generated</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a class="active" href="service.html">Service</a>
+      <a href="qualifications.html">Qualifications</a>
+      <a href="genai.html">AI Generated</a>
+    </div>
+    <div class="theme-switch-container">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-switch">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
 
   <div class="topo-band">
@@ -49,15 +58,26 @@
       </div>
       <p>Welcome to my community service page! Here, you'll find projects that showcase my commitment to giving back and making a positive impact.</p>
 
-      <div class="portfolio-item">
+      <div class="service-item">
         <h2>TAMU BUILD Student Supervisor</h2>
         <p>Founded in 2013, TAMU BUILD is a student-led organization at Texas A&M University. BUILD volunteers help convert shipping containers into full-service medical clinics and distributes them to communities across the globe that lack access to quality healthcare facilities.</p>
         <p>I served as a Student Supervisor, overseeing the efforts of fellow students and ensuring that the construction process ran smoothly.</p>
         <div class="button-container">
-          <a href="#" class="btn btn-primary">Learn More</a>
+          <a href="https://www.buildtamu.org/" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <h2>The Big Event Volunteer</h2>
+        <p>The Big Event is the largest one-day student-run service project in the nation. Each spring, thousands of Texas A&M students come together to say "Thank You" to the residents of Bryan and College Station by completing service projects such as yard work, window washing, and painting.</p>
+        <p>As a volunteer, I participated in this Aggie tradition of service, helping community members with home improvement projects they couldn't complete on their own. This experience reinforced the importance of gratitude and community connection.</p>
+        <div class="button-container">
+          <a href="https://bigevent.tamu.edu/" class="btn btn-primary">Learn More</a>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="scripts/style-toggle.js"></script>
 </body>
 </html>

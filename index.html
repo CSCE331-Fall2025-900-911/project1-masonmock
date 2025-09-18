@@ -1,16 +1,26 @@
 <!DOCTYPE HTML>
 <head>
   <title>Mason Mock</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <link id="main-style" rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/png" href="styles/favicon.png">
 </head>
 
+<!-- Top navigation -->
 <body>
   <div class="topnav">
-    <a class="active" href="index.html">Home</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="service.html">Service</a>
-    <a href="qualifications.html">Qualifications</a>
-    <a href="genai.html">AI Generated</a>
+    <div class="nav-links">
+      <a class="active" href="index.html">Home</a>
+      <a href="portfolio.html">Portfolio</a>
+      <a href="service.html">Service</a>
+      <a href="qualifications.html">Qualifications</a>
+      <a href="genai.html">AI Generated</a>
+    </div>
+    <div class="theme-switch-container">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-switch">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
 
   <div class="topo-band">
@@ -59,5 +69,7 @@
       <img src="styles/headshot.png" alt="Mason Mock">
     </div>
   </div>
+
+  <script src="scripts/style-toggle.js"></script>
 </body>
 </html>

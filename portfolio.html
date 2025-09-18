@@ -1,16 +1,25 @@
 <!DOCTYPE HTML>
 <head>
   <title>Mason Mock - Portfolio</title>
-  <link rel="stylesheet" href="styles/main.css">
+  <link id="main-style" rel="stylesheet" href="styles/main.css">
+  <link rel="icon" type="image/png" href="styles/favicon.png">
 </head>
 
 <body>
   <div class="topnav">
-    <a href="index.html">Home</a>
-    <a class="active" href="portfolio.html">Portfolio</a>
-    <a href="service.html">Service</a>
-    <a href="qualifications.html">Qualifications</a>
-    <a href="genai.html">AI Generated</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a class="active" href="portfolio.html">Portfolio</a>
+      <a href="service.html">Service</a>
+      <a href="qualifications.html">Qualifications</a>
+      <a href="genai.html">AI Generated</a>
+    </div>
+    <div class="theme-switch-container">
+      <label class="switch">
+        <input type="checkbox" id="theme-toggle-switch">
+        <span class="slider round"></span>
+      </label>
+    </div>
   </div>
 
   <div class="topo-band">
@@ -61,10 +70,12 @@
         </ul>
         <div class="button-container">
           <a href="#" class="btn btn-primary">View Project</a>
-          <a href="#" class="btn btn-primary">GitHub Repo</a>
+          <a href="https://github.com/mdmock/Wilkerson-Curve-Fitting" class="btn btn-primary">GitHub Repo</a>
         </div>
       </div>
     </div>
   </div>
+
+  <script src="scripts/style-toggle.js"></script>
 </body>
 </html>
