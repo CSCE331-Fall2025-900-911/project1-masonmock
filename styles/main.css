@@ -435,11 +435,9 @@ a:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
-/* Updated resume styling to match qualification container */
-
 .resume-container {
   width: 100%;
-  margin: 0 0 40px 0; /* Changed from "margin: 40px 0" to remove top margin */
+  margin: 0 0 0px 0; /* Changed from "margin: 40px 0" to remove top margin */
   background-color: var(--navy-light);
   padding: 30px;
   border-radius: 10px;
@@ -491,7 +489,7 @@ a:hover {
 
 .resume-frame-container {
   width: 100%;
-  height: 800px;
+  height: 701px;
   overflow: hidden;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
