@@ -933,7 +933,7 @@ body.qualifications-page .resume-controls {
 
 .contact-item {
   margin-bottom: 15px;
-  color: var(--text-light);
+  color: var(--text-secondary); /* Changed from var(--text-light) to match paragraphs */
   font-weight: 500;
 }
 
@@ -944,14 +944,9 @@ body.qualifications-page .resume-controls {
 }
 
 .contact-item a {
-  color: var(--text-light);
+  color: var(--text-secondary); /* Changed from var(--text-light) to match paragraphs */
   text-decoration: none;
   transition: color 0.3s ease;
-}
-
-.contact-item a:hover {
-  color: var(--accent);
-  text-decoration: underline;
 }
 
 .social-links, .quick-links {
@@ -961,7 +956,7 @@ body.qualifications-page .resume-controls {
 }
 
 .social-links a, .quick-links a {
-  color: var(--text-light);
+  color: var(--text-secondary); /* Changed from var(--text-light) to match paragraphs */
   text-decoration: none;
   padding: 10px 15px;
   transition: all 0.3s ease;
