@@ -1,4 +1,4 @@
-/* Color scheme variables */
+/* color scheme variables */
 :root {
   --navy: #0a192f;
   --navy-light: #172a45;
@@ -13,7 +13,7 @@
   --white: var(--text-light);
 }
 
-/* Body formatting */
+/* body formatting */
 body {
   background-color: var(--navy);
   color: var(--text-light);
@@ -23,6 +23,7 @@ body {
   overflow-x: hidden;
 }
 
+/* animations */
 @keyframes moveWave {
   0% {
     transform: translateY(0);
@@ -35,20 +36,20 @@ body {
   }
 }
 
+/* top navigation */
 .topnav {
   background-color: var(--navy-light);
   overflow: hidden;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
-  justify-content: space-between; /* This separates the nav links and theme switch */
+  justify-content: space-between;
   padding: 0 20px;
   position: relative;
   z-index: 10;
   height: 60px;
 }
 
-/* Left-aligned navigation links */
 .nav-links {
   display: flex;
   align-items: center;
@@ -94,7 +95,7 @@ body {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Theme switch container in the topnav */
+/* theme toggle switch */
 .theme-switch-container {
   display: flex;
   align-items: center;
@@ -103,9 +104,6 @@ body {
   padding-right: 20px;
 }
 
-/* Slider toggle styles */
-
-/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -113,14 +111,12 @@ body {
   height: 28px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -154,7 +150,6 @@ input:checked + .slider:before {
   background-color: var(--blue);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 28px;
 }
@@ -163,7 +158,6 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* You can remove the theme-toggle-btn styles if you want, or keep them for future use */
 .theme-toggle-btn {
   padding: 8px 16px;
   cursor: pointer;
@@ -189,6 +183,7 @@ input:checked + .slider:before {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* topographic banner */
 .topo-band {
   position: relative;
   width: 100%;
@@ -263,6 +258,7 @@ input:checked + .slider:before {
   animation-delay: -15s;
 }
 
+/* divider line */
 .divider {
   height: 3px;
   background-color: var(--accent);
@@ -273,6 +269,7 @@ input:checked + .slider:before {
   opacity: 0.7;
 }
 
+/* main content containers */
 .container {
   max-width: 900px;
   width: 100%;
@@ -291,6 +288,7 @@ input:checked + .slider:before {
   margin: 0 auto;
 }
 
+/* headshot styling */
 .headshot-container {
   width: 380px;
   background-color: var(--navy-light);
@@ -312,6 +310,7 @@ input:checked + .slider:before {
   max-height: none;
 }
 
+/* headings */
 h1, h2, h3 {
   color: var(--white);
 }
@@ -356,6 +355,7 @@ h1, h2, h3 {
   border-radius: 4px;
 }
 
+/* links */
 a {
   color: var(--accent);
   text-decoration: none;
@@ -366,6 +366,7 @@ a:hover {
   text-decoration: underline;
 }
 
+/* buttons */
 .button-container {
   display: flex;
   gap: 15px;
@@ -406,7 +407,6 @@ a:hover {
   background-color: var(--blue-light);
 }
 
-/* Theme Toggle Button */
 .theme-btn {
   background-color: var(--blue);
   color: var(--text-light);
@@ -414,14 +414,14 @@ a:hover {
   border-radius: 5px;
   border: none;
   cursor: pointer;
-  margin-left: auto; /* Push to right */
+  margin-left: auto;
   display: inline-block;
   position: relative;
-  z-index: 20; /* Ensure it's above other elements */
+  z-index: 20;
   font-family: inherit;
   font-size: 14px;
-  min-width: 100px; /* Ensure it has width */
-  min-height: 34px; /* Ensure it has height */
+  min-width: 100px;
+  min-height: 34px;
 }
 
 .theme-btn:hover {
@@ -435,9 +435,10 @@ a:hover {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
 }
 
+/* resume section */
 .resume-container {
   width: 100%;
-  margin: 0 0 0px 0; /* Changed from "margin: 40px 0" to remove top margin */
+  margin: 0 0 0px 0;
   background-color: var(--navy-light);
   padding: 30px;
   border-radius: 10px;
@@ -458,10 +459,8 @@ a:hover {
   border-radius: 0;
   box-shadow: none;
   display: inline-block;
-  /* Remove the after pseudo-element that creates the underline */
 }
 
-/* Add the dot mesh background */
 .resume-title::before {
   content: "";
   position: absolute;
@@ -480,7 +479,7 @@ a:hover {
 
 .resume-controls {
   display: flex;
-  justify-content: flex-start; /* Align to the left like other buttons */
+  justify-content: flex-start;
   gap: 15px;
   margin: 25px 0 35px 0;
   position: relative;
@@ -506,7 +505,7 @@ a:hover {
   border: none;
 }
 
-/* Responsive adjustments */
+/* mobile responsive */
 @media (max-width: 768px) {
   .topnav {
     flex-wrap: wrap;
@@ -572,6 +571,7 @@ a:hover {
   }
 }
 
+/* text styling */
 p {
   color: var(--text-secondary);
   line-height: 1.6;
@@ -582,6 +582,7 @@ li {
   line-height: 1.6;
 }
 
+/* footer */
 .site-footer {
   background-color: var(--navy-light);
   border-top: 3px solid var(--blue);
@@ -662,7 +663,6 @@ li {
   font-size: 0.9rem;
 }
 
-/* Responsive footer */
 @media (max-width: 768px) {
   .footer-content {
     grid-template-columns: 1fr;
